@@ -97,7 +97,6 @@ class ConfigureFedexDefaults implements DataPatchInterface, PatchVersionInterfac
             } elseif (stripos($mapOld['path'], 'free_method') !== false && isset($codes['method'][$mapOld['value']])) {
                 $mapNew = $codes['method'][$mapOld['value']];
             } elseif (stripos($mapOld['path'], 'allowed_methods') !== false) {
-                $mapNew = [];
                 foreach (explode(',', $mapOld['value']) as $shippingMethod) {
                     if (isset($codes['method'][$shippingMethod])) {
                         $mapNew[] = $codes['method'][$shippingMethod];
